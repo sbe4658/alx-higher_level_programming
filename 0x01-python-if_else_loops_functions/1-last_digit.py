@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import random
-number = random.randint(-1000, 1000)
+number = random.randint(-10000, 10000)
 ldigit = number % 10 if number >= 0 else -(-number % 10)
 if ldigit:
     if ldigit > 5:
