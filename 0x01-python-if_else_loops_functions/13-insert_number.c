@@ -22,10 +22,18 @@ listint_t *insert_node(listint_t **head, int number)
 	else
 	{
 		index = locate_place(*head, number);
-		for (; index - 1 > 0; index--)
-			tmp = tmp->next;
-		new->next = tmp->next;
-		tmp->next = new;
+		if (index == 0)
+		{
+			new->next = tmp;
+			*head = new;
+		}
+		else
+		{
+			for (; index - 1 > 0; index--)
+				tmp = tmp->next;
+			new->next = tmp->next;
+			tmp->next = new;
+		}
 	}
 	return (new);
 }
@@ -48,5 +56,5 @@ int locate_place(listint_t *head, int number)
 		head = head->next;
 		idx++;
 	}
-	return (-1);
+	return (idx);
 }
