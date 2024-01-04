@@ -5,4 +5,4 @@ if __name__ == "__main__":
     defined = dir(hidden_4)
     for name in defined:
         if name[:2] != "__":
-            print("{:s}".format(name))
+            print(name)
