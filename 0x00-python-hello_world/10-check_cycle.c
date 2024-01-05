@@ -12,8 +12,10 @@ int check_cycle(listint_t *list)
 	last = ahead;
 	while (ahead)
 	{
-		ahead = ahead->next->next;
 		last = last->next;
+		if (!last)
+			break;
+		ahead = ahead->next->next;
 		if (last == ahead)
 			return (1);
 	}
