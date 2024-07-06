@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def weight_average(my_list=[]):
     if my_list == []:
-        return None
+        return 0
     x = y = 0
     for data in my_list:
         score = data[0]
