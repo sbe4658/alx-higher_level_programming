@@ -5,7 +5,7 @@ def list_division(my_list_1, my_list_2, list_length):
         try:
             res.append(my_list_1[idx] / my_list_2[idx])
         except (ValueError, TypeError):
-            print("wrong Type")
+            print("wrong type")
             res.append(0)
             continue
         except IndexError:
