@@ -58,4 +58,4 @@ class Rectangle:
         Returns:
             the results.
         """
-        return self.__width + self.__height
+        return (self.__width + self.__height) * 2
