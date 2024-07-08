@@ -75,7 +75,7 @@ class Rectangle:
             return tmp
         else:
             return ""
-    
+
     def __repr__(self):
         """ reprisentation. """
         return f"Rectangle({self.__width:d}, {self.__height:d})"
