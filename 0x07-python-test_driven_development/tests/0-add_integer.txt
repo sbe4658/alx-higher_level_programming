@@ -1,0 +1,72 @@
+The ``0-add_integer`` module
+============================
+
+Contains a function's defintion ``add_integer(a, b=98)`` That adds two integers,
+a and b
+
+Numbers
+=======
+
+``add_integer()`` returs the result of the addition of two integers,
+Postive
+
+::
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(15, 5)
+    20
+
+Or negative
+
+::
+
+    >>> add_integer(-15, 5)
+    -10
+
+Floats are also valid arguments (N.B: they're casted to integers before addition).
+
+::
+
+    >>> add_integer(1.1, 0.9)
+    1
+
+The second parameter ``b`` is an optional parameter, if left empty the result would be
+the addition of ``a`` + 98
+
+::
+
+    >>> add_integer(1000)
+    1098
+
+Other values
+============
+
+The Expected arguments are either integers or Floats.
+
+::
+
+    >>> add_integer("str")
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+::
+
+    >>> add_integer(0, "str")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+Overflow is not handled by ``add_integer()``
+
+::
+
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+Similarly Not-a-Number value is not handled
+
+::
+
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
