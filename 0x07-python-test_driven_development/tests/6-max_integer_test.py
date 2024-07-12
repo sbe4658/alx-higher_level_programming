@@ -27,12 +27,13 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer(test), 7895)
 
     def test_one_element(self):
-        test = [0]
-        self.assertEqual(max_integer(test), 0)
+        self.assertEqual(max_integer([1]), 1)
 
     def test_combination(self):
-        test = [-1, 1.6, 5, 0]
-        self.assertEqual(max_integer(test), 5)
+        self.assertEqual(max_integer([-15, 5, 0]), 5)
+    def test_all_negative(self):
+        self.assertEqual(max_integer([-2, -10, -185]), -2)
+    
 
 
 if __name__ == '__main__':
