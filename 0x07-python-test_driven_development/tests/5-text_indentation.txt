@@ -1,0 +1,28 @@
+``5-text_indentation.py`` module.
+=================================
+
+A weird module that defines ``text_indentation(text)`` prints text, and adds 2
+lines if a special character was found ``., ? and :``
+;;
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation("My name is Alpha 00. What's your name?")
+    My name is Alpha 00.
+    <BLANKLINE>
+    What's your name?
+    <BLANKLINE>
+
+;;
+    >>> text_indentation("My name is Alpha 00")
+    My name is Alpha 00
+
+if ``text`` is not a string, the function prints an  error msg.
+;;
+    >>> text_indentation(True)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+``text`` is a required argument.
+;;
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
