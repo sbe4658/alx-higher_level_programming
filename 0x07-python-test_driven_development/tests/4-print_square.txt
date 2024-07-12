@@ -26,3 +26,9 @@ Not necessary but its there just-in-case the checker has an unexpected input.
     >>> print_square(-1.09)
     Traceback (most recent call last):
     TypeError: size must be an integer
+
+``size`` must be passed
+;;
+    >>> print_square()
+    Traceback (most recent call last):
+    TypeError: print_square() missing 1 required positional argument: 'size'
