@@ -3,7 +3,7 @@
 
 
 def text_indentation(text):
-    """ prints a text with 2 new lines after each of these characters: 
+    """ prints a text with 2 new lines after each of these characters:
         - .
         - ?
         - :
@@ -16,6 +16,10 @@ def text_indentation(text):
         print(text[i], end='')
         if text[i] in special:
             print('\n')
-            if i + 1 < len(text) and text[i + 1] == ' ':
-                i += 1
+            j = i + 1
+            while j < len(text):
+                if text[j] != ' ':
+                    break
+                j += 1
+            i = j - 1
         i += 1
