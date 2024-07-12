@@ -1,0 +1,42 @@
+``2-matrix_divided`` module.
+============================
+
+Defines ``matrix_divided(matrix, div)`` where matrix is a list of lists of numbers.
+the function returns a new matrix storing all the element divided by ``div``, where
+each element is a float rounded with 2 decimals.
+;;
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+    >>> matrix_divided([[1, 2], [4, 6], [8, 10]], 2)
+    [[0.5, 1.0], [2.0, 3.0], [4.0, 5.0]]
+
+``div`` must be non-zero number
+;;
+    >>> matrix_divided([[1, 2], [4, 6], [8, 10]], 0)
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+
+The function also checks if matrix is a list of lists.
+;;
+
+    >>> matrix_divided("school", 98)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Similarly, the function checks if matrix is empty.
+;;
+    >>> matrix_divided([], 0)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+It also checks if each elements in matrix rows is an number of type int/float.
+;;
+    >>> matrix_divided([["s",1], ["not-num", (1, 2)]], 1)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+This also applies for ``div`` variable/argument.
+;;
+    >>> matrix_divided([[1, 2], [4, 6], [8, 10]], (1,2))
+    Traceback (most recent call last):
+    TypeError: div must be a number
