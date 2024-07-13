@@ -4,4 +4,4 @@
 
 class LockedClass():
     """ first_name is the way to unlock. """
-    __slot__ = ['first_name']
+    __slots__ = ['first_name']
