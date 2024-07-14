@@ -1,0 +1,38 @@
+``1-my_list`` module.
+=====================
+
+Defines ``MyList`` class that inherits from ``list`` class/object,
+the class has a public instance methode ``print_sorted`` that sort
+a list of ``int``s.
+;;
+    >>> MyList = __import__('1-my_list').MyList
+    >>> l = MyList()
+    >>> l.append(1)
+    >>> l.append(15)
+    >>> l.append(5)
+    >>> l.append(20)
+    >>> l.append(10)
+    >>> l.print_sorted()
+    [1, 5, 10, 15, 20]
+
+Since it is derived from ``list`` all magic methods are available!
+;;
+    >>> l.__str__()
+    '[1, 15, 5, 20, 10]'
+
+And of course empty lists can also be created eaisily.
+;;
+    >>> new = MyList()
+    >>> new.print_sorted()
+    []
+
+Negative numbers works fine!
+;;
+    >>> l = MyList()
+    >>> l.append(-10)
+    >>> l.append(-1)
+    >>> l.append(-100)
+    >>> l.append(-45)
+    >>> l.append(-15)
+    >>> l.print_sorted()
+    [-100, -45, -15, -10, -1]
