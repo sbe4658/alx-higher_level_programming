@@ -20,6 +20,31 @@ an ``int`` type
     TypeError: score must be an integer
 
 ;;
+    >>> b.integer_validator('score', (1,))
+    Traceback (most recent call last):
+    TypeError: score must be an integer
+
+;;
+    >>> b.integer_validator('score', [45])
+    Traceback (most recent call last):
+    TypeError: score must be an integer
+
+;;
+    >>> b.integer_validator('score', False)
+    Traceback (most recent call last):
+    TypeError: score must be an integer
+
+;;
+    >>> b.integer_validator('score', {3, 4})
+    Traceback (most recent call last):
+    TypeError: score must be an integer
+
+;;
+    >>> b.integer_validator('score', None)
+    Traceback (most recent call last):
+    TypeError: score must be an integer
+
+;;
     >>> b.integer_validator('score', 4)
 
 The value must > 0
