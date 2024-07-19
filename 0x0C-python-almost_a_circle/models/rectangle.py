@@ -1,6 +1,6 @@
 #!/usr/bin/python3
+""" Rectangle module. and Rectangle is documented?"""
 from models.base import Base
-""" Rectangle module. """
 
 
 class Rectangle(Base):
