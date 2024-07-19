@@ -17,6 +17,8 @@ class Rectangle(Base):
             raise TypeError('y must be an integer')
         if width <= 0:
             raise ValueError('width must be > 0')
+        elif height <= 0:
+            raise ValueError('height must be > 0')
         elif x < 0:
             raise ValueError('x must be >= 0')
         elif y < 0:
