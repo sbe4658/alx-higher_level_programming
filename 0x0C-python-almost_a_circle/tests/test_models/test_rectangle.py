@@ -15,22 +15,23 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r3.id, 12)
 
     def test_validator(self):
-        Rectangle("12", 13)
-        self.assertRaises(TypeError)
+        with self.assertRaises(TypeError):
+            Rectangle("12", 13)
         r1 = Rectangle(1, 2, 5, 6)
-        r1.width = "Not value"
-        self.assertRaises(TypeError)
-        r1.height = "15"
-        self.assertRaises(TypeError)
-        r1.x = (1, '1')
-        self.assertRaises(TypeError)
-        r1.y = ['a']
-        self.assertRaises(TypeError)
-        r1.x = -1
-        self.assertRaises(ValueError)
-        r1.y = -5
-        self.assertRaises(ValueError)
-        r1.width = -1
-        self.assertRaises(ValueError)
-        r1.height = 0
-        self.assertRaises(ValueError)
+        with self.assertRaises(TypeError):
+            r1.width = "Not value"
+        with self.assertRaises(TypeError):
+            r1.height = "15"
+        with self.assertRaises(TypeError):
+            r1.x = (1, '1')
+        with self.assertRaises(TypeError):
+            r1.y = ['a']
+        with self.assertRaises(ValueError):
+            r1.x = -1
+        with self.assertRaises(ValueError):
+            r1.y = -5
+        with self.assertRaises(ValueError):
+            r1.width = -1
+        with self.assertRaises(ValueError):
+            r1.height = 0
+
