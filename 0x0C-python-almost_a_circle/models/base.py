@@ -25,6 +25,12 @@ class Base:
             f.write(cls.to_json_string(to_write))
 
     @staticmethod
+    def from_json_string(json_string):
+        if json_string is None:
+            return []
+        json.loads(json_string)
+
+    @staticmethod
     def to_json_string(list_dictionaries):
         """ encode a list of dicts. in json. """
         if list_dictionaries is None:
