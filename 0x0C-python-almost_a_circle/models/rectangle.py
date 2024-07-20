@@ -76,6 +76,7 @@ class Rectangle(Base):
             h -= 1
 
     def update(self, *args):
+        """ Update the current rect. """
         try:
             self.id = args[0]
             self.width = args[1]
