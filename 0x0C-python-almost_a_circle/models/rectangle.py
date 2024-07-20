@@ -68,7 +68,10 @@ class Rectangle(Base):
         """ Prints the current Rectangle. """
         w = self.width
         h = self.height
+        for i in range(0, self.y):
+            print()
         while h > 0:
+            print(' ' * self.x, end='')
             print('#' * w)
             h -= 1
 
