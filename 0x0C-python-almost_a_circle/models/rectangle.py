@@ -81,6 +81,7 @@ class Rectangle(Base):
         return self.__height * self.__width
 
     def display(self):
+        """ Prints the current Rectangle. """
         w = self.width
         h = self.height
         while h > 0:
