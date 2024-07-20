@@ -46,7 +46,6 @@ class Base:
             with open(f'{cls.__name__}.json') as f:
                 data = cls.from_json_string(f.read())
         except Exception:
-            print("Somthing went wrong...")
             return []
         instances = []
         for dict in data:
