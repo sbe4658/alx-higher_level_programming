@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """ Base Class. """
 import json
-from models.rectangle import Rectangle
-from models.square import Square
 
 
 class Base:
@@ -21,6 +19,8 @@ class Base:
         """ Creates a dummy instance, and then use the update methed
             on the list of dicts.
         """
+        from models.rectangle import Rectangle
+        from models.square import Square
         obj = cls.__name__
         if obj is 'Square':
             dummy = Square(2, 2)
