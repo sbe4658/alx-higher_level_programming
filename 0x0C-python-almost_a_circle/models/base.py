@@ -18,6 +18,9 @@ class Base:
 
     @classmethod
     def create(cls, **dictonary):
+        """ Creates a dummy instance, and then use the update methed
+            on the list of dicts.
+        """
         obj = cls.__name__
         if obj is 'Square':
             dummy = Square(2, 2)
