@@ -75,8 +75,11 @@ class Rectangle(Base):
             print('#' * w)
             h -= 1
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ Update the current rect. """
+        if not args:
+            for attr, val in kwargs:
+                self.__setattr__(attr, val)
         try:
             self.id = args[0]
             self.width = args[1]
