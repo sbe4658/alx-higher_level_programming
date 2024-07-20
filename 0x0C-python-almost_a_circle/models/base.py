@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """ Base Class. """
 import json
+from models.rectangle import Rectangle
+from models.square import Square
 
 
 class Base:
@@ -13,6 +15,16 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @classmethod
+    def create(cls, **dictonary):
+        obj = cls.__name__
+        if obj is 'Square':
+            dummy = Square(2, 2)
+        elif obj is 'Rectangle':
+            dummy = Rectangle(3, 4)
+        dummy.update(**dictonary)
+        return dummy
 
     @classmethod
     def save_to_file(cls, list_objs):
