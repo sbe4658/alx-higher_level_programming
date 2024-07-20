@@ -19,4 +19,5 @@ class Base:
         """ encode a list of dicts. in json. """
         if list_dictionaries is not None:
             return json.dumps(list_dictionaries)
-        return []
+        else:
+            return []
