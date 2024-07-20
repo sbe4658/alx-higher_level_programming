@@ -89,6 +89,14 @@ class Rectangle(Base):
         except Exception:
             pass
 
+    def to_dictionary(self):
+        """ represent Rectangle in a dict. """
+        return {'id': self.__getattribute__('id'),
+                'width': self.__getattribute__('width'),
+                'height': self.__getattribute__('height'),
+                'x': self.__getattribute__('x'),
+                'y': self.__getattribute__('y')}
+
     def __str__(self):
         """ Return a string. """
         if self.width == self.height:
