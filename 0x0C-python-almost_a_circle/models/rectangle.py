@@ -80,14 +80,15 @@ class Rectangle(Base):
         if not args:
             for attr, val in kwargs:
                 self.__setattr__(attr, val)
-        try:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-            self.x = args[3]
-            self.y = args[4]
-        except Exception:
-            pass
+        else:
+            try:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
+                self.y = args[4]
+            except Exception:
+                pass
 
     def __str__(self):
         """ Return a string. """
