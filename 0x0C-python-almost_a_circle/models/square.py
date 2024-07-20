@@ -29,3 +29,10 @@ class Square(Rectangle):
             self.y = args[3]
         except Exception:
             pass
+
+    def to_dictionary(self):
+        """ represent Rectangle in a dict. """
+        return {'id': self.__getattribute__('id'),
+                'size': self.__getattribute__('size'),
+                'x': self.__getattribute__('x'),
+                'y': self.__getattribute__('y')}
