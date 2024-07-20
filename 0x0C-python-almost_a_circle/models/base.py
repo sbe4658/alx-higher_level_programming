@@ -17,7 +17,6 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """ encode a list of dicts. in json. """
-        if list_dictionaries is not None:
-            return json.dumps(list_dictionaries)
-        else:
+        if list_dictionaries is None:
             return []
+        return json.dumps(list_dictionaries)
