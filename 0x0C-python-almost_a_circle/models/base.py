@@ -22,9 +22,9 @@ class Base:
         from models.rectangle import Rectangle
         from models.square import Square
         obj = cls.__name__
-        if obj is 'Square':
-            dummy = Square(2, 2)
-        elif obj is 'Rectangle':
+        if obj == 'Square':
+            dummy = Square(2)
+        elif obj == 'Rectangle':
             dummy = Rectangle(3, 4)
         dummy.update(**dictonary)
         return dummy
