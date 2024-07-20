@@ -75,6 +75,16 @@ class Rectangle(Base):
             print('#' * w)
             h -= 1
 
+    def update(self, *args):
+        try:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
+        except Exception:
+            pass
+
     def __str__(self):
         """ Return a string. """
         return '[Rectangle] ({:}) {}/{} - {}/{}'.format(self.id, self.x,
