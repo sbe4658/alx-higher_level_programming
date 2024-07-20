@@ -73,6 +73,7 @@ class Rectangle(Base):
             h -= 1
 
     def __str__(self):
+        """ Return a string. """
         return '[Rectangle] ({:}) {}/{} - {}/{}'.format(self.id, self.x,
                                                         self.y, self.width,
                                                         self.height)
