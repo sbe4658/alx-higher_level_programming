@@ -14,6 +14,16 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @classmethod
+    def save_to_file(cls, list_objs):
+        to_write = []
+        if list_objs is not None:
+            for instance in list_objs:
+                json_encode = instance.to_dictionary()
+                to_write.append(json_encode)
+        with open(f'{cls.__name__}.json', 'w') as f:
+            f.write(cls.to_json_string(to_write))
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """ encode a list of dicts. in json. """
