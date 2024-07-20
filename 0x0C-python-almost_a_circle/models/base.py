@@ -39,6 +39,20 @@ class Base:
         with open(f'{cls.__name__}.json', 'w') as f:
             f.write(cls.to_json_string(to_write))
 
+    @classmethod
+    def load_from_file(cls):
+        """ returns a list of instaces. """
+        try:
+            with open(f'{cls.__name__}.json') as f:
+                data = cls.from_json_string(f.read())
+        except Exception:
+            print("Somthing went wrong...")
+            return []
+        instances = []
+        for dict in data:
+            instances.append(cls.create(**dict))
+        return instances
+
     @staticmethod
     def from_json_string(json_string):
         if json_string is None:
