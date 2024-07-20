@@ -91,6 +91,9 @@ class Rectangle(Base):
 
     def __str__(self):
         """ Return a string. """
+        if self.width == self.height:
+            return '[Square] ({}) {}/{} - {}'.format(self.id, self.x,
+                                                     self.y, self.width)
         return '[Rectangle] ({:}) {}/{} - {}/{}'.format(self.id, self.x,
                                                         self.y, self.width,
                                                         self.height)
